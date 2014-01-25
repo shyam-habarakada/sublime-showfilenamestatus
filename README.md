@@ -5,4 +5,4 @@ A sublime text 2 plugin for showing the current active filename in the status ba
 
 # Installation
 
-Clone the repo into your sublime text 2 plugins directory and restart sublime. That's it.
+Copy the ShowFileNameStatus.py file into your ST3 Packages/User directory.

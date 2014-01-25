@@ -1,14 +1,9 @@
 import sublime, sublime_plugin, os
 
 class ShowFilenameInStatus(sublime_plugin.EventListener):
-    status_key = 'filename'
-
-    def set_filename_status(self, view):
-        filename = os.path.split(view.file_name())[1]
-        if filename is None:
-            view.erase_status(self.status_key)
-        else:
-            view.set_status(self.status_key, "File: " + filename)
-
-    def on_activated(self, view):
-        self.set_filename_status(view)
+	def on_activated_async(self, view):
+	    filename = os.path.split(view.file_name())[1]
+	    if filename is None:
+	        view.erase_status('_filename')
+	    else:
+	        view.set_status('_filename', "File: " + filename)
